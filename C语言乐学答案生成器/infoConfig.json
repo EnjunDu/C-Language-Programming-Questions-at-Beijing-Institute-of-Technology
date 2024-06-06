@@ -1,0 +1,9 @@
+﻿{
+  "使用说明": "ABOUTapp.txt",
+  "课程选择": "ABOUTcourse.txt",
+  "题目选择": "ABOUTpractice.txt",
+  "生成代码": "ABOUTcode.txt",
+  "清空代码": "ABOUTclear.txt",
+  "以txt打开": "ABOUTtxt.txt",
+  "若无法AC请看这里": "ABOUTac.txt"
+}
