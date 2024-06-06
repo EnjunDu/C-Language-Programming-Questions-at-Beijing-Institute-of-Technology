@@ -1,0 +1,13 @@
+#include<stdio.h> #include<string.h> 
+int replace1(char s[3]) 
+{ if(s[0]=='S') 
+s[0]='E'; if(s[1]=='A') 
+s[1]='L'; if(s[1]=='J') s[1]='B'; if(s[1]=='Q') s[1]='F'; 
+} int replace2(char s[3]) 
+{ if(s[0]=='E') s[0]='S'; if(s[1]=='L')
+ s[1]='A'; if(s[1]=='B') s[1]='J'; if(s[1]=='F') s[1]='Q'; } 
+ int resort(char s1[3],char s2[3],char s3[3])
+{ int temp1,temp2,temp3; char m[3]; temp1=strcmp(s1,s2); 
+if(temp1>0)
+ else { memcpy(m,s2,sizeof(s2)); memcpy(s2,s1,sizeof(s1)); memcpy(s1,m,sizeof(m)); } temp2=strcmp(s2,s3); if(temp2>0) ; else { memcpy(m,s3,sizeof(s3)); memcpy(s3,s2,sizeof(s2)); memcpy(s2,m,sizeof(m)); } temp3=strcmp(s1,s2); if(temp3>0) ; else { memcpy(m,s2,sizeof(s2)); memcpy(s2,s1,sizeof(s1)); memcpy(s1,m,sizeof(m)); } } int main() { int n; char a1[3],a2[3],a3[3],b1[3],b2[3],b3[3]; memset(a1,0,3); memset(a2,0,3); memset(a3,0,3); memset(b1,0,3); memset(b2,0,3); memset(b3,0,3); scanf("%s%s%s",&a1,&a2,&a3); scanf("%s%s%s",&b1,&b2,&b3); if(a1[1]=='B'||a2[1]=='B'||a3[1]=='B'||b1[1]=='B'||b2[1]=='B'||b3[1]=='B') {printf("Input Error!\n"); return 0; } if((b2[0]==b3[0])&&(b2[1]==b3[1])) {printf("Input Error!\n"); return 0; } replace1(a1);replace1(a2);replace1(a3);replace1(b1);replace1(b2);replace1(b3); resort(a1,a2,a3);resort(b1,b2,b3); n=strcmp(a1,b1); if((a1[0]==b1[0])&&(a2[1]==b2[1])) printf("Winner is X!\n"); else if(n>0) printf("Winner is A!\n"); else printf("Winner is B!\n"); replace2(a1);replace2(a2);replace2(a3);replace2(b1);replace2(b2);replace2(b3); printf("A: %s %s %s\n",a1,a2,a3); 
+printf("B: %s %s %s\n",b1,b2,b3); }
