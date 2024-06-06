@@ -1,0 +1,24 @@
+#include <stdio.h>
+int main()
+{
+	int n,i=0;
+	scanf("%d",&n);
+do{
+	int a,b,c,d,e,f,g,sum;
+	scanf("%d %d %d",&a,&b,&c);
+	d=a/4;
+	e=a/100;
+	f=a/400;
+	sum=(a-1990)*365+(a-1990)/4-(a-1990)/100+((a/400)-4);
+	int n[12]={31,28,31,30,31,30,31,31,30,31,30,31};
+	for(int j=0;j<b-2;j++){
+		sum+=n[j];
+	}
+	sum+=c;
+	int h=sum%5;
+	if(h>=0&&h<3){printf("He was fishing on %d.%d.%d\n",a,b,c);}
+	if(h>=3){printf("He was basking on %d.%d.%d\n",a,b,c);}
+	i++;
+}while(i<n);
+	return 0;
+}
